@@ -11,3 +11,4 @@
       body.style.background = ''; // Reset background to default
     }
   });
+
