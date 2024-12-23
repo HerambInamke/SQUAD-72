@@ -1,4 +1,4 @@
-/* From Uiverse.io by nihad-abbasov */ 
+/* From Uiverse.io by nihad-abbasov */
 /* switch settings 👇 */
 
 .ui-switch {
@@ -10,13 +10,18 @@
     --circle-diameter: 32px;
     --circle-bg: rgb(232, 89, 15);
     --circle-inset: calc((var(--circle-diameter) - var(--switch-height)) / 2);
-  }
-  
-  .ui-switch input {
+    position: absolute;
+    top: 0;  /* Position the switch at the top of the page */
+    left: 0; /* Position the switch at the left side of the page */
+    padding: 10px; /* Optional, to add some space from the edges */
+    z-index: 10; /* Ensure it appears above other content */
+}
+
+.ui-switch input {
     display: none;
-  }
-  
-  .slider {
+}
+
+.slider {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -26,9 +31,9 @@
     border-radius: 999px;
     position: relative;
     cursor: pointer;
-  }
-  
-  .slider .circle {
+}
+
+.slider .circle {
     top: calc(var(--circle-inset) * -1);
     left: 0;
     width: var(--circle-diameter);
@@ -52,9 +57,8 @@
     -ms-flex-pack: center;
     justify-content: center;
     box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
-    ;
   }
-  
+
   .slider .circle::before {
     content: "";
     position: absolute;
@@ -67,15 +71,13 @@
     transition: all 500ms;
     opacity: 0;
   }
-  
+
   /* actions */
-  
   .ui-switch input:checked+.slider .circle {
     left: calc(100% - var(--circle-diameter));
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTQuMiAyLjVsLS43IDEuOC0xLjguNyAxLjguNy43IDEuOC42LTEuOEw2LjcgNWwtMS45LS43LS42LTEuOHptMTUgOC4zYTYuNyA2LjcgMCAxMS02LjYtNi42IDUuOCA1LjggMCAwMDYuNiA2LjZ6IiAvPgo8L3N2Zz4=");
     background-color: rgb(0, 56, 146);
   }
-  
+
   .ui-switch input:active+.slider .circle::before {
     -webkit-transition: 0s;
     -o-transition: 0s;
@@ -83,7 +85,7 @@
     opacity: 1;
     width: 0;
     height: 0;
-  }
+}
 
 /* Default light theme background */
 body {
@@ -96,15 +98,4 @@ body {
 body.dark-mode {
     background-color: #121212;
     color: white;
-}
-
-
-
-/* When the switch is checked, move the circle to the right */
-.ui-switch input:checked + .slider .circle {
-    transform: translateX(26px);
-}
-
-.ui-switch input:checked + .slider {
-    background-color: #4caf50;
 }
