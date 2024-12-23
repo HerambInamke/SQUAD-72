@@ -1,57 +1,5 @@
-/* styles.css */
-
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #74ebd5, #acb6e5);
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    padding: 30px 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #222;
-}
-
-main p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.cta-button {
-    font-size: 1rem;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px;
-    color: #fff;
-    background: linear-gradient(45deg, #ff6a00, #ee0979);
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.cta-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-footer p {
-    margin-top: 20px;
-    font-size: 0.9rem;
-    color: #555;
-}
-/* switch button */
+/* From Uiverse.io by nihad-abbasov */ 
+/* switch settings 👇 */
 
 .ui-switch {
     /* switch */
@@ -60,7 +8,7 @@ footer p {
     --switch-height: 20px;
     /* circle */
     --circle-diameter: 32px;
-    --circle-bg: rgb(0, 56, 146);
+    --circle-bg: rgb(232, 89, 15);
     --circle-inset: calc((var(--circle-diameter) - var(--switch-height)) / 2);
   }
   
@@ -125,6 +73,7 @@ footer p {
   .ui-switch input:checked+.slider .circle {
     left: calc(100% - var(--circle-diameter));
     background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTQuMiAyLjVsLS43IDEuOC0xLjguNyAxLjguNy43IDEuOC42LTEuOEw2LjcgNWwtMS45LS43LS42LTEuOHptMTUgOC4zYTYuNyA2LjcgMCAxMS02LjYtNi42IDUuOCA1LjggMCAwMDYuNiA2LjZ6IiAvPgo8L3N2Zz4=");
+    background-color: rgb(0, 56, 146);
   }
   
   .ui-switch input:active+.slider .circle::before {
@@ -135,62 +84,27 @@ footer p {
     width: 0;
     height: 0;
   }
-  /*End of switch button*/
-  /* Light Theme */
+
+/* Default light theme background */
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #74ebd5, #acb6e5);
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    transition: background 0.5s, color 0.5s;
+    background-color: rgb(39, 27, 207);
+    color: black;
+    transition: all 0.3s ease;
 }
 
-.welcome-container {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    padding: 30px 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+/* Dark mode background */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #222;
+
+
+/* When the switch is checked, move the circle to the right */
+.ui-switch input:checked + .slider .circle {
+    transform: translateX(26px);
 }
 
-main p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.cta-button {
-    font-size: 1rem;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px;
-    color: #fff;
-    background: linear-gradient(45deg, #ff6a00, #ee0979);
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.cta-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Dark Theme */
-body.dark-theme {
-    background: linear-gradient(135deg, #2c3e50, #4ca1af);
-    color: #f1f1f1;
-}
-
-body.dark-theme .welcome-container {
-    background: rgba(0, 0, 0, 0.8);
-    color: #f1f1f1;
+.ui-switch input:checked + .slider {
+    background-color: #4caf50;
 }
