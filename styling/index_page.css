@@ -10,18 +10,17 @@
     --circle-diameter: 32px;
     --circle-bg: rgb(232, 89, 15);
     --circle-inset: calc((var(--circle-diameter) - var(--switch-height)) / 2);
-    position: absolute;
-    top: 0;  /* Position the switch at the top of the page */
-    left: 0; /* Position the switch at the left side of the page */
-    padding: 10px; /* Optional, to add some space from the edges */
-    z-index: 10; /* Ensure it appears above other content */
-}
-
-.ui-switch input {
+    position: fixed;  /* To fix it to the right */
+    top: 10px; /* Place it on the top-right corner */
+    right: 10px; /* Place it on the right edge */
+    z-index: 1000; /* Make sure it's above all other content */
+  }
+  
+  .ui-switch input {
     display: none;
-}
-
-.slider {
+  }
+  
+  .slider {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -31,9 +30,9 @@
     border-radius: 999px;
     position: relative;
     cursor: pointer;
-}
-
-.slider .circle {
+  }
+  
+  .slider .circle {
     top: calc(var(--circle-inset) * -1);
     left: 0;
     width: var(--circle-diameter);
@@ -58,7 +57,7 @@
     justify-content: center;
     box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
   }
-
+  
   .slider .circle::before {
     content: "";
     position: absolute;
@@ -71,13 +70,15 @@
     transition: all 500ms;
     opacity: 0;
   }
-
+  
   /* actions */
+  
   .ui-switch input:checked+.slider .circle {
     left: calc(100% - var(--circle-diameter));
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTQuMiAyLjVsLS43IDEuOC0xLjguNyAxLjguNy43IDEuOC42LTEuOEw2LjcgNWwtMS45LS43LS42LTEuOHptMTUgOC4zYTYuNyA2LjcgMCAxMS02LjYtNi42IDUuOCA1LjggMCAwMDYuNiA2LjZ6IiAvPgo8L3N2Zz4=");
     background-color: rgb(0, 56, 146);
   }
-
+  
   .ui-switch input:active+.slider .circle::before {
     -webkit-transition: 0s;
     -o-transition: 0s;
@@ -85,17 +86,5 @@
     opacity: 1;
     width: 0;
     height: 0;
-}
-
-/* Default light theme background */
-body {
-    background-color: rgb(39, 27, 207);
-    color: black;
-    transition: all 0.3s ease;
-}
-
-/* Dark mode background */
-body.dark-mode {
-    background-color: #121212;
-    color: white;
-}
+  }
+  
