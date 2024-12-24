@@ -12,4 +12,11 @@
     }
   });
 
-  
+    // Select the button using its class name
+    const button = document.querySelector('.ui-btn');
+
+    // Add a click event listener to the button
+    button.addEventListener('click', function() {
+      // Navigate to the desired page
+      window.location.href = 'project.html'; // Replace with the desired URL
+    });

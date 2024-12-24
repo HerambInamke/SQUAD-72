@@ -103,7 +103,7 @@
 
 .container {
     text-align: center;
-    animation: fadeIn 2s ease-in-out;
+    animation: fadeIn 3s ease-in-out;
     padding: 0 20px;
     box-sizing: border-box;
 }
@@ -120,7 +120,7 @@
     font-size: 2.5rem;
     font-weight: 500;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    animation: slideUp 2s ease-in-out;
+    animation: slideUp 3s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -208,11 +208,22 @@ body::before {
   --font-family: Menlo,Roboto Mono,monospace;
 }
 
+/* Add this animation to the button */
+@keyframes buttonFadeIn {
+  0% {
+      opacity: 0;
+      transform: scale(1);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
 /* Button settings 👆 */
 .ui-btn {
   position: absolute; /* Positioning the button absolutely */
   top: 75%; /* Move the button slightly down from the center */
-  left: 50%; /* Center horizontally */
+  left: 49%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Perfectly center it */
   padding: var(--btn-padding);
   display: flex;
@@ -226,6 +237,7 @@ body::before {
   transition: var(--btn-transition);
   overflow: hidden;
   box-shadow: var(--btn-shadow);
+  animation: buttonFadeIn 2.5s ease-in-out;
 }
 
 .ui-btn span {
