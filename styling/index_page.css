@@ -237,7 +237,7 @@ body::before {
   transition: var(--btn-transition);
   overflow: hidden;
   box-shadow: var(--btn-shadow);
-  animation: buttonFadeIn 2.5s ease-in-out;
+  animation: buttonFadeIn 3.5s ease-in-out;
 }
 
 .ui-btn span {
