@@ -87,4 +87,103 @@
     width: 0;
     height: 0;
   }
-  
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    overflow: hidden;
+    transition: background 0.5s ease;
+}
+
+.container {
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.greeting {
+    font-size: 4rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.intro {
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    animation: slideUp 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.7));
+    z-index: -1;
+    transition: background 0.5s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .greeting {
+        font-size: 3rem;
+    }
+
+    .intro {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .greeting {
+        font-size: 2.5rem;
+    }
+
+    .intro {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .greeting {
+        font-size: 2rem;
+    }
+
+    .intro {
+        font-size: 1.5rem;
+    }
+}
