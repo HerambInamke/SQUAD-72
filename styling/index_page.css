@@ -188,57 +188,5 @@ body::before {
     }
 }
 /* responisve design */
-/* Navbar Styling */
-.navbar {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  display: flex;
-  gap: 20px;
-  font-size: 1rem;
-}
 
-.navbar a {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 600;
-  transition: color 0.3s ease, background-color 0.3s ease;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
 
-.navbar a:hover {
-  color: #1e3c72;
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-/* Responsive Design for Navbar */
-@media (max-width: 1024px) {
-  .navbar {
-      gap: 15px;
-  }
-
-  .navbar a {
-      font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-      gap: 10px;
-  }
-
-  .navbar a {
-      font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar {
-      gap: 5px;
-  }
-
-  .navbar a {
-      font-size: 0.7rem;
-  }
-}
