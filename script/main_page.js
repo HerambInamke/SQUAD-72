@@ -18,5 +18,5 @@
     // Add a click event listener to the button
     button.addEventListener('click', function() {
       // Navigate to the desired page
-      window.location.href = 'project.html'; // Replace with the desired URL
+      window.location.href = '2nd_page.html'; // Replace with the desired URL
     });
