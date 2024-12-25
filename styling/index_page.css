@@ -94,16 +94,16 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: linear-gradient(135deg, #20e36b, #2a5298);
     font-family: 'Poppins', sans-serif;
     color: #ffffff;
     overflow: hidden;
-    transition: background 0.5s ease;
+    /* transition: background 0.5s ease; */
 }
 
 .container {
     text-align: center;
-    animation: fadeIn 3s ease-in-out;
+    animation: fadeIn 2.5s ease-in-out;
     padding: 0 20px;
     box-sizing: border-box;
 }
@@ -360,5 +360,3 @@ body::before {
     right: 0;
   }
 }
-
-
