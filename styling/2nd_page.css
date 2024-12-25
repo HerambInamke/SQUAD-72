@@ -111,4 +111,195 @@ body {
     }
 }
 
-/* upper is the css of te animation of the ark */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+/* Navbar */
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ff6347; /* Tomato color */
+}
+
+/* Navbar on Smaller Screens */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 0.5rem;
+        position: absolute;
+        top: 100%;
+        right: 1rem;
+        background-color: #333;
+        padding: 1rem;
+        border-radius: 8px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Background Toggle Button */
+.toggle-btn-container {
+    position: absolute;
+    top: 34px; /* Adjusted to align with the navbar height */
+    right: -1px; /* Adjusted to bring it slightly left */
+}
+
+#bg-toggle-btn {
+    padding: 10px 15px;
+    font-size: 1rem;
+    background: #333;
+    color: #c9d005;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+#bg-toggle-btn:hover {
+    background: #ff6f61;
+    color: #eee616;
+}
+
+/* Content Styles */
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Media Queries for Phones */
+@media (max-width: 480px) {
+    /* Adjust navbar styles for very small screens (phones in portrait mode) */
+    .navbar {
+        padding: 0.5rem; /* Adjust padding for smaller screens */
+    }
+
+    .logo {
+        font-size: 1.2rem; /* Slightly smaller logo for small phones */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 0.5rem;
+        position: absolute;
+        top: 100%;
+        right: 1rem;
+        background-color: #333;
+        padding: 1rem;
+        border-radius: 8px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Background Toggle Button for Phones */
+    .toggle-btn-container {
+        top: 70px; /* Moves the toggle button below the navbar */
+        right: 15px; /* Adjust the right margin */
+    }
+
+    #bg-toggle-btn {
+        font-size: 0.9rem; /* Adjust button size for phones */
+        padding: 8px 12px; /* Adjust padding for phones */
+    }
+}
+
+/* For Larger Phone Screens (landscape or wider phones) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem 1rem; /* Ensure padding is consistent */
+    }
+
+    .logo {
+        font-size: 1.5rem; /* Larger font size for landscape */
+    }
+
+    /* Move toggle button slightly up for better alignment */
+    .toggle-btn-container {
+        top: 60px; /* Fine-tune if necessary */
+        right: 20px;
+    }
+
+    #bg-toggle-btn {
+        font-size: 1rem;
+    }
+}
+
+/* Content Styles */
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
