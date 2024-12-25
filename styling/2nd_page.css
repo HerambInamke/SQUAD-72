@@ -3,7 +3,7 @@ body {
     margin: 0;
     height: 100vh; /* Full viewport height */
     display: flex; /* Center the .svg-frame */
-    justify-content: center; /* Horizontally center */
+    justify-content:flex-end; /* Horizontally center */
     align-items: center; /* Vertically center */
     background: linear-gradient(to bottom, #000, #333); /* Black gradient */
     overflow: hidden; /* Prevent scrollbars if content overflows */
@@ -11,14 +11,18 @@ body {
 
 /* From Uiverse.io by Nawsome */  
 .svg-frame {
-    position: relative;
-    width: 300px;
-    height: 300px;
+    position: relative; /* Default positioning */
+    width: 209px; /* Adjust size as needed */
+    height: 209px;
     transform-style: preserve-3d;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: -10%; /* Moves the element 10% to the left */
 }
+
+
+
 
 .svg-frame svg {
     position: absolute;
