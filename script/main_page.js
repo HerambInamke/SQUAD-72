@@ -47,3 +47,4 @@ function moveAstronaut() {
 
 // Move the astronaut every 50 milliseconds for smooth animation
 setInterval(moveAstronaut, 50);  
+
