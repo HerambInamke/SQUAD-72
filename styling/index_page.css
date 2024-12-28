@@ -723,7 +723,7 @@ body.dark-mode {
   animation: astronaut 10s linear infinite;
   transition: left 0.5s ease, top 0.5s ease;
   /* Smooth transition for position changes */
-   */
+  
 }
 
 #Title {
@@ -735,7 +735,7 @@ body.dark-mode {
 
 #Title h1 {
   color: #ee00ff;
-font-size: 100 px;
+font-size: 20 px;          
   /* Change to your desired color */
 }
 
