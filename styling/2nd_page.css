@@ -125,6 +125,7 @@ body {
 /* Navbar */
 /* Navbar */
 /* Navbar */
+/* Navbar Styling */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -137,7 +138,118 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    animation: slideDown 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth slide-down animation */
 }
+
+/* Hover Effect for Navbar */
+.navbar:hover {
+    background-color: #444; /* Slightly lighter background on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Adds a stronger shadow effect */
+}
+
+/* Navbar Links Styling */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.4s ease, transform 0.4s ease;
+    position: relative; /* For underline animation */
+    overflow: hidden; /* Clips the underline animation */
+}
+
+/* Link Hover Effects */
+.navbar a:hover {
+    color: #ff6347; /* Changes color to tomato */
+    transform: scale(1.1); /* Slightly enlarges the link */
+}
+
+/* Fancy Underline Animation */
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #ff6347;
+    transition: width 0.4s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%; /* Expands underline */
+}
+
+/* Navbar Items Layout */
+.navbar .nav-items {
+    display: flex;
+    gap: 1rem; /* Space between links */
+}
+
+/* Slide Down Animation for Navbar */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Pulsating Logo Animation */
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff6347;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Keyframes for Logo Pulsing */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Fade-in Effect for Links */
+.navbar a {
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+.navbar a:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.navbar a:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.navbar a:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+.navbar a:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+/* Keyframes for Fading in Links */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .logo {
     font-size: 1.5rem;
@@ -190,6 +302,7 @@ body {
     right: -1px; /* Adjusted to bring it slightly left */
 }
 
+/* Toggle Button Styling */
 #bg-toggle-btn {
     padding: 10px 15px;
     font-size: 1rem;
@@ -198,62 +311,64 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s, color 0.3s;
+    position: relative;
+    transition: background 0.3s, color 0.3s, transform 0.3s ease;
+    overflow: hidden; /* Ensures animations don't go beyond the button's boundaries */
 }
 
+/* Hover Effects */
 #bg-toggle-btn:hover {
-    background: #ff6f61;
-    color: #eee616;
+    background: #ff6f61; /* Change background color on hover */
+    color: #eee616; /* Change text color on hover */
+    transform: scale(1.1); /* Slightly enlarge the button */
 }
 
-/* Content Styles */
-.content {
-    padding: 20px;
-    text-align: center;
+/* Ripple Effect */
+#bg-toggle-btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
+    opacity: 0;
 }
 
-/* Media Queries for Phones */
+#bg-toggle-btn:hover::after {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+}
+
+/* Animation on Button Load */
+@keyframes btnSlideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#bg-toggle-btn {
+    animation: btnSlideIn 0.8s ease-out;
+}
+
+/* Media Query for Smaller Screens */
 @media (max-width: 480px) {
-    /* Adjust navbar styles for very small screens (phones in portrait mode) */
-    .navbar {
-        padding: 0.5rem; /* Adjust padding for smaller screens */
-    }
-
-    .logo {
-        font-size: 1.2rem; /* Slightly smaller logo for small phones */
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 0.5rem;
-        position: absolute;
-        top: 100%;
-        right: 1rem;
-        background-color: #333;
-        padding: 1rem;
-        border-radius: 8px;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    /* Background Toggle Button for Phones */
-    .toggle-btn-container {
-        top: 70px; /* Moves the toggle button below the navbar */
-        right: 15px; /* Adjust the right margin */
-    }
-
     #bg-toggle-btn {
-        font-size: 0.9rem; /* Adjust button size for phones */
-        padding: 8px 12px; /* Adjust padding for phones */
+        font-size: 0.9rem; /* Adjust font size for phones */
+        padding: 8px 12px; /* Adjust padding for smaller devices */
+        transform: scale(1); /* Reset scale for smaller screens */
     }
 }
+
 
 /* For Larger Phone Screens (landscape or wider phones) */
 @media (max-width: 768px) {
