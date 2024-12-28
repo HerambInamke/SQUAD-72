@@ -1,16 +1,23 @@
-/* From Uiverse.io by Tiagoadag */ 
+/* From Uiverse.io by Tiagoadag */
 body {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: 100vh; /* Full viewport height */
-  margin: 0; /* Remove default margin */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  height: 100vh;
+  /* Full viewport height */
+  margin: 0;
+  /* Remove default margin */
 }
 
 .card {
-  position: relative; /* Set position to relative for absolute positioning of card2 */
-  width: 1300px; /* Width of the card */
-  height: 550px; /* Height of the card */
+  position: relative;
+  /* Set position to relative for absolute positioning of card2 */
+  width: 1300px;
+  /* Width of the card */
+  height: 550px;
+  /* Height of the card */
   background-image: linear-gradient(163deg, #763ff8 0%, #3700ff 100%);
   border-radius: 20px;
   border: 5px solid #8000ff;
@@ -18,35 +25,52 @@ body {
 }
 
 .card2 {
-  position: absolute; /* Position card2 absolutely within card */
-  top: 0; /* Align to the top of card */
-  left: 0; /* Align to the left of card */
-  width: 100%; /* Full width of card */
-  height: 100%; /* Full height of card */
+  position: absolute;
+  /* Position card2 absolutely within card */
+  top: 0;
+  /* Align to the top of card */
+  left: 0;
+  /* Align to the left of card */
+  width: 100%;
+  /* Full width of card */
+  height: 100%;
+  /* Full height of card */
   background-color: #1a1a1a;
-  border-radius: 20px; /* Added border-radius */
+  border-radius: 20px;
+  /* Added border-radius */
   transition: all .2s;
-  display: flex; /* Use flexbox to center content */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
+  /* Use flexbox to center content */
   justify-content: center;
-  align-items: center; /* Center horizontally */
-  height: 100%; /* Ensure it takes full height of the parent */
-  text-align: center; /* Center text */
-  
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  display: flex;
+  flex-direction: column;
+  /* Stack elements vertically */
+  justify-content: center;
+  align-items: center;
+  /* Center horizontally */
+  height: 100%;
+  /* Ensure it takes full height of the parent */
+  text-align: center;
+  /* Center text */
+  overflow: hidden;
 }
 
-.card2:hover ~ .card {
-  border: 5px solid transparent; /* Hide the border */
+.card2:hover~.card {
+  border: 5px solid transparent;
+  /* Hide the border */
 }
 
 .card2 h1 {
-  color: white; /* Change text color to white */
-  font-size: 36px; /* Increase font size */
-  text-align: center; /* Center the text */
-  
+  color: white;
+  /* Change text color to white */
+  font-size: 36px;
+  /* Increase font size */
+  text-align: center;
+  /* Center the text */
+
 }
 
 .card2:hover {
@@ -56,8 +80,9 @@ body {
 .card:hover {
   box-shadow: 0px 0px 30px 1px rgba(119, 68, 255, 0.70);
 }
+
 /* Start of  theme button */
-/* From Uiverse.io by nihad-abbasov */ 
+/* From Uiverse.io by nihad-abbasov */
 /* switch settings 👇 */
 
 .ui-switch {
@@ -69,10 +94,14 @@ body {
   --circle-diameter: 32px;
   --circle-bg: rgb(232, 89, 15);
   --circle-inset: calc((var(--circle-diameter) - var(--switch-height)) / 2);
-  position: absolute; /* Position it absolutely */
-  top: 20px; /* Distance from the top */
-  left: 20px; /* Distance from the left */
-  z-index: 10; /* Ensure it appears above other elements */
+  position: absolute;
+  /* Position it absolutely */
+  top: 20px;
+  /* Distance from the top */
+  left: 20px;
+  /* Distance from the left */
+  z-index: 10;
+  /* Ensure it appears above other elements */
 }
 
 
@@ -116,7 +145,7 @@ body {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   ;
 }
 
@@ -149,17 +178,22 @@ body {
   width: 0;
   height: 0;
 }
+
 /* end of theme button */
 /* Light Mode Styles */
 body.light-mode {
-  background-color: white; /* Light background */
-  color: black; /* Light text color */
+  background-color: white;
+  /* Light background */
+  color: black;
+  /* Light text color */
 }
 
 /* Dark Mode Styles */
 body.dark-mode {
-  background-color: #1a1a1a; /* Dark background */
-  color: white; /* Dark text color */
+  background-color: #1a1a1a;
+  /* Dark background */
+  color: white;
+  /* Dark text color */
 }
 
 /* explore button */
@@ -178,7 +212,7 @@ body.dark-mode {
   --font-size: 16px;
   /* 👆 this field should not be empty */
   --font-weight: 600;
-  --font-family: Menlo,Roboto Mono,monospace;
+  --font-family: Menlo, Roboto Mono, monospace;
 }
 
 /* button settings 👆 */
@@ -215,18 +249,21 @@ body.dark-mode {
   background: inherit;
 }
 
-.ui-btn:hover, .ui-btn:focus {
+.ui-btn:hover,
+.ui-btn:focus {
   background: var(--btn-default-bg);
   box-shadow: 0px 0px 10px 0px rgba(119, 68, 255, 0.70);
   border: 2px solid #7241FF;
   ;
 }
 
-.ui-btn:hover span, .ui-btn:focus span {
+.ui-btn:hover span,
+.ui-btn:focus span {
   color: var(--hover-btn-color);
 }
 
-.ui-btn:hover span::before, .ui-btn:focus span::before {
+.ui-btn:hover span::before,
+.ui-btn:focus span::before {
   animation: chitchat linear both var(--btn-animation-duration);
 }
 
@@ -327,15 +364,27 @@ body.dark-mode {
 
 /* explore button end */
 .button-container {
-  display: flex; /* Use flexbox for alignment */
-  justify-content: center; /* Center the button horizontally */
-  align-items: center; /* Center the button vertically */
-  margin-top: 0; /* Reset any top margin */
-  margin-right: 0; /* Reset the right margin */
+  display: flex;
+  /* Use flexbox for alignment */
+  justify-content: center;
+  /* Center the button horizontally */
+  align-items: center;
+  /* Center the button vertically */
   margin-top: 50px;
+  /* Reset any top margin */
+  position: relative;
+  z-index: 20;
 }
+
 /* astronot */
-/* From Uiverse.io by JkHuger */ 
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} 
 @keyframes snow {
   0% {
     opacity: 0;
@@ -663,3 +712,30 @@ body.dark-mode {
   border-radius: 0 30px 0 0;
   border-bottom: 10px solid #b0cfe4;
 }
+
+.astronaut {
+  width: 250px;
+  height: 300px;
+  position: absolute;
+  z-index: 10;
+  top: calc(50% - 150px);
+  left: calc(50% - 125px);
+  animation: astronaut 10s linear infinite;
+  transition: left 0.5s ease, top 0.5s ease;
+  /* Smooth transition for position changes */
+   */
+}
+
+#Title {
+  position: relative; /* Add this line */
+  z-index: 20; /* Ensure it has a higher z-index */
+  font-size: 46px; /* You can also specify the font size if needed */
+  text-align: center; /* Center the text */
+}
+
+#Title h1 {
+  color: #ee00ff;
+font-size: 100 px;
+  /* Change to your desired color */
+}
+
