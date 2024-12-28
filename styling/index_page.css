@@ -1,199 +1,171 @@
-/* From Uiverse.io by nihad-abbasov */
+/* From Uiverse.io by Tiagoadag */ 
+body {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
+}
+
+.card {
+  position: relative; /* Set position to relative for absolute positioning of card2 */
+  width: 1300px; /* Width of the card */
+  height: 550px; /* Height of the card */
+  background-image: linear-gradient(163deg, #763ff8 0%, #3700ff 100%);
+  border-radius: 20px;
+  border: 5px solid #8000ff;
+  transition: all .3s;
+}
+
+.card2 {
+  position: absolute; /* Position card2 absolutely within card */
+  top: 0; /* Align to the top of card */
+  left: 0; /* Align to the left of card */
+  width: 100%; /* Full width of card */
+  height: 100%; /* Full height of card */
+  background-color: #1a1a1a;
+  border-radius: 20px; /* Added border-radius */
+  transition: all .2s;
+  display: flex; /* Use flexbox to center content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center;
+  align-items: center; /* Center horizontally */
+  height: 100%; /* Ensure it takes full height of the parent */
+  text-align: center; /* Center text */
+  
+}
+
+.card2:hover ~ .card {
+  border: 5px solid transparent; /* Hide the border */
+}
+
+.card2 h1 {
+  color: white; /* Change text color to white */
+  font-size: 36px; /* Increase font size */
+  text-align: center; /* Center the text */
+  
+}
+
+.card2:hover {
+  transform: scale(0.98);
+}
+
+.card:hover {
+  box-shadow: 0px 0px 30px 1px rgba(119, 68, 255, 0.70);
+}
+/* Start of  theme button */
+/* From Uiverse.io by nihad-abbasov */ 
 /* switch settings 👇 */
 
 .ui-switch {
-    /* switch */
-    --switch-bg: rgb(135, 150, 165);
-    --switch-width: 48px;
-    --switch-height: 20px;
-    /* circle */
-    --circle-diameter: 32px;
-    --circle-bg: rgb(232, 89, 15);
-    --circle-inset: calc((var(--circle-diameter) - var(--switch-height)) / 2);
-    position: fixed;  /* To fix it to the right */
-    top: 10px; /* Place it on the top-right corner */
-    right: 10px; /* Place it on the right edge */
-    z-index: 1000; /* Make sure it's above all other content */
-  }
-  
-  .ui-switch input {
-    display: none;
-  }
-  
-  .slider {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: var(--switch-width);
-    height: var(--switch-height);
-    background: var(--switch-bg);
-    border-radius: 999px;
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .slider .circle {
-    top: calc(var(--circle-inset) * -1);
-    left: 0;
-    width: var(--circle-diameter);
-    height: var(--circle-diameter);
-    position: absolute;
-    background: var(--circle-bg);
-    border-radius: inherit;
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTkuMzA1IDEuNjY3VjMuNzVoMS4zODlWMS42NjdoLTEuMzl6bS00LjcwNyAxLjk1bC0uOTgyLjk4Mkw1LjA5IDYuMDcybC45ODItLjk4Mi0xLjQ3My0xLjQ3M3ptMTAuODAyIDBMMTMuOTI3IDUuMDlsLjk4Mi45ODIgMS40NzMtMS40NzMtLjk4Mi0uOTgyek0xMCA1LjEzOWE0Ljg3MiA0Ljg3MiAwIDAwLTQuODYyIDQuODZBNC44NzIgNC44NzIgMCAwMDEwIDE0Ljg2MiA0Ljg3MiA0Ljg3MiAwIDAwMTQuODYgMTAgNC44NzIgNC44NzIgMCAwMDEwIDUuMTM5em0wIDEuMzg5QTMuNDYyIDMuNDYyIDAgMDExMy40NzEgMTBhMy40NjIgMy40NjIgMCAwMS0zLjQ3MyAzLjQ3MkEzLjQ2MiAzLjQ2MiAwIDAxNi41MjcgMTAgMy40NjIgMy40NjIgMCAwMTEwIDYuNTI4ek0xLjY2NSA5LjMwNXYxLjM5aDIuMDgzdi0xLjM5SDEuNjY2em0xNC41ODMgMHYxLjM5aDIuMDg0di0xLjM5aC0yLjA4NHpNNS4wOSAxMy45MjhMMy42MTYgMTUuNGwuOTgyLjk4MiAxLjQ3My0xLjQ3My0uOTgyLS45ODJ6bTkuODIgMGwtLjk4Mi45ODIgMS40NzMgMS40NzMuOTgyLS45ODItMS40NzMtMS40NzN6TTkuMzA1IDE2LjI1djIuMDgzaDEuMzg5VjE2LjI1aC0xLjM5eiIgLz4KPC9zdmc+");
-    background-repeat: no-repeat;
-    background-position: center center;
-    -webkit-transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    -o-transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
-  }
-  
-  .slider .circle::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.75);
-    border-radius: inherit;
-    -webkit-transition: all 500ms;
-    -o-transition: all 500ms;
-    transition: all 500ms;
-    opacity: 0;
-  }
-  
-  /* actions */
-  
-  .ui-switch input:checked+.slider .circle {
-    left: calc(100% - var(--circle-diameter));
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTQuMiAyLjVsLS43IDEuOC0xLjguNyAxLjguNy43IDEuOC42LTEuOEw2LjcgNWwtMS45LS43LS42LTEuOHptMTUgOC4zYTYuNyA2LjcgMCAxMS02LjYtNi42IDUuOCA1LjggMCAwMDYuNiA2LjZ6IiAvPgo8L3N2Zz4=");
-    background-color: rgb(0, 56, 146);
-  }
-  
-  .ui-switch input:active+.slider .circle::before {
-    -webkit-transition: 0s;
-    -o-transition: 0s;
-    transition: 0s;
-    opacity: 1;
-    width: 0;
-    height: 0;
-  }
-  body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #20e36b, #2a5298);
-    font-family: 'Poppins', sans-serif;
-    color: #ffffff;
-    overflow: hidden;
-    /* transition: background 0.5s ease; */
+  /* switch */
+  --switch-bg: rgb(135, 150, 165);
+  --switch-width: 48px;
+  --switch-height: 20px;
+  /* circle */
+  --circle-diameter: 32px;
+  --circle-bg: rgb(232, 89, 15);
+  --circle-inset: calc((var(--circle-diameter) - var(--switch-height)) / 2);
+  position: absolute; /* Position it absolutely */
+  top: 20px; /* Distance from the top */
+  left: 20px; /* Distance from the left */
+  z-index: 10; /* Ensure it appears above other elements */
 }
 
-.container {
-    text-align: center;
-    animation: fadeIn 2.5s ease-in-out;
-    padding: 0 20px;
-    box-sizing: border-box;
+
+
+.ui-switch input {
+  display: none;
 }
 
-.greeting {
-    font-size: 4rem;
-    font-weight: 700;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
-    letter-spacing: 2px;
+.slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  background: var(--switch-bg);
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
 }
 
-.intro {
-    font-size: 2.5rem;
-    font-weight: 500;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    animation: slideUp 3s ease-in-out;
+.slider .circle {
+  top: calc(var(--circle-inset) * -1);
+  left: 0;
+  width: var(--circle-diameter);
+  height: var(--circle-diameter);
+  position: absolute;
+  background: var(--circle-bg);
+  border-radius: inherit;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTkuMzA1IDEuNjY3VjMuNzVoMS4zODlWMS42NjdoLTEuMzl6bS00LjcwNyAxLjk1bC0uOTgyLjk4Mkw1LjA5IDYuMDcybC45ODItLjk4Mi0xLjQ3My0xLjQ3M3ptMTAuODAyIDBMMTMuOTI3IDUuMDlsLjk4Mi45ODIgMS40NzMtMS40NzMtLjk4Mi0uOTgyek0xMCA1LjEzOWE0Ljg3MiA0Ljg3MiAwIDAwLTQuODYyIDQuODZBNC44NzIgNC44NzIgMCAwMDEwIDE0Ljg2MiA0Ljg3MiA0Ljg3MiAwIDAwMTQuODYgMTAgNC44NzIgNC44NzIgMCAwMDEwIDUuMTM5em0wIDEuMzg5QTMuNDYyIDMuNDYyIDAgMDExMy40NzEgMTBhMy40NjIgMy40NjIgMCAwMS0zLjQ3MyAzLjQ3MkEzLjQ2MiAzLjQ2MiAwIDAxNi41MjcgMTAgMy40NjIgMy40NjIgMCAwMTEwIDYuNTI4ek0xLjY2NSA5LjMwNXYxLjM5aDIuMDgzdi0xLjM5SDEuNjY2em0xNC41ODMgMHYxLjM5aDIuMDg0di0xLjM5aC0yLjA4NHpNNS4wOSAxMy45MjhMMy42MTYgMTUuNGwuOTgyLjk4MiAxLjQ3My0xLjQ3My0uOTgyLS45ODJ6bTkuODIgMGwtLjk4Mi45ODIgMS40NzMgMS40NzMuOTgyLS45ODItMS40NzMtMS40NzN6TTkuMzA1IDE2LjI1djIuMDgzaDEuMzg5VjE2LjI1aC0xLjM5eiIgLz4KPC9zdmc+");
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -o-transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+  ;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+.slider .circle::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: inherit;
+  -webkit-transition: all 500ms;
+  -o-transition: all 500ms;
+  transition: all 500ms;
+  opacity: 0;
 }
 
-@keyframes slideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* actions */
+
+.ui-switch input:checked+.slider .circle {
+  left: calc(100% - var(--circle-diameter));
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTQuMiAyLjVsLS43IDEuOC0xLjguNyAxLjguNy43IDEuOC42LTEuOEw2LjcgNWwtMS45LS43LS42LTEuOHptMTUgOC4zYTYuNyA2LjcgMCAxMS02LjYtNi42IDUuOCA1LjggMCAwMDYuNiA2LjZ6IiAvPgo8L3N2Zz4=");
+  background-color: rgb(0, 56, 146);
 }
 
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.7));
-    z-index: -1;
-    transition: background 0.5s ease;
+.ui-switch input:active+.slider .circle::before {
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
+  opacity: 1;
+  width: 0;
+  height: 0;
+}
+/* end of theme button */
+/* Light Mode Styles */
+body.light-mode {
+  background-color: white; /* Light background */
+  color: black; /* Light text color */
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .greeting {
-        font-size: 3rem;
-    }
-
-    .intro {
-        font-size: 2rem;
-    }
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #1a1a1a; /* Dark background */
+  color: white; /* Dark text color */
 }
 
-@media (max-width: 768px) {
-    .greeting {
-        font-size: 2.5rem;
-    }
+/* explore button */
 
-    .intro {
-        font-size: 1.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .greeting {
-        font-size: 2rem;
-    }
-
-    .intro {
-        font-size: 1.5rem;
-    }
-}
-/* responisve design */
-
-/* Get-started btn */
-/* From Uiverse.io by Galahhad */ 
-/* From Uiverse.io by Galahhad */ 
 .ui-btn {
-  --btn-default-bg: rgb(41, 41, 41);
+  --btn-default-bg: #010314;
   --btn-padding: 15px 20px;
   --btn-hover-bg: rgb(51, 51, 51);
   --btn-transition: .3s;
@@ -201,30 +173,18 @@ body::before {
   --btn-animation-duration: 1.2s;
   --btn-shadow-color: rgba(0, 0, 0, 0.137);
   --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
-  --hover-btn-color: #FAC921;
+  --hover-btn-color: #7241FF;
   --default-btn-color: #fff;
   --font-size: 16px;
+  /* 👆 this field should not be empty */
   --font-weight: 600;
   --font-family: Menlo,Roboto Mono,monospace;
 }
 
-/* Add this animation to the button */
-@keyframes buttonFadeIn {
-  0% {
-      opacity: 0;
-      transform: scale(1);
-  }
-  100% {
-      opacity: 1;
-      transform: scale(1);
-  }
-}
-/* Button settings 👆 */
+/* button settings 👆 */
+
 .ui-btn {
-  position: absolute; /* Positioning the button absolutely */
-  top: 75%; /* Move the button slightly down from the center */
-  left: 49%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Perfectly center it */
+  box-sizing: border-box;
   padding: var(--btn-padding);
   display: flex;
   align-items: center;
@@ -232,29 +192,34 @@ body::before {
   color: var(--default-btn-color);
   font: var(--font-weight) var(--font-size) var(--font-family);
   background: var(--btn-default-bg);
-  border: none;
   cursor: pointer;
   transition: var(--btn-transition);
   overflow: hidden;
   box-shadow: var(--btn-shadow);
-  animation: buttonFadeIn 3.5s ease-in-out;
+  border-radius: 10px;
+  border: 2px solid #2A2B3A;
 }
 
 .ui-btn span {
   letter-spacing: var(--btn-letter-spacing);
   transition: var(--btn-transition);
+  box-sizing: border-box;
   position: relative;
   background: inherit;
 }
 
 .ui-btn span::before {
+  box-sizing: border-box;
   position: absolute;
   content: "";
   background: inherit;
 }
 
 .ui-btn:hover, .ui-btn:focus {
-  background: var(--btn-hover-bg);
+  background: var(--btn-default-bg);
+  box-shadow: 0px 0px 10px 0px rgba(119, 68, 255, 0.70);
+  border: 2px solid #7241FF;
+  ;
 }
 
 .ui-btn:hover span, .ui-btn:focus span {
@@ -264,7 +229,6 @@ body::before {
 .ui-btn:hover span::before, .ui-btn:focus span::before {
   animation: chitchat linear both var(--btn-animation-duration);
 }
-
 
 @keyframes chitchat {
   0% {
@@ -359,4 +323,14 @@ body::before {
     content: "";
     right: 0;
   }
+}
+
+/* explore button end */
+.button-container {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center the button horizontally */
+  align-items: center; /* Center the button vertically */
+  margin-top: 0; /* Reset any top margin */
+  margin-right: 0; /* Reset the right margin */
+  margin-top: 50px;
 }
