@@ -11,6 +11,8 @@ body {
   /* Remove default margin */
 }
 
+
+
 .card {
   position: relative;
   /* Set position to relative for absolute positioning of card2 */
@@ -20,8 +22,15 @@ body {
   /* Height of the card */
   background-image: linear-gradient(163deg, #763ff8 0%, #3700ff 100%);
   border-radius: 20px;
-  border: 5px solid #8000ff;
   transition: all .3s;
+  background-color: #1a1a1a;
+  /* Dark card background */
+  border: 2px solid #00ffcc;
+  /* Neon border */
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+  /* Glowing effect */
+  transition: all 0.3s;
+  /* Smooth transition */
 }
 
 .card2 {
@@ -64,9 +73,9 @@ body {
 }
 
 .card2 h1 {
-  color: white;
+  color: rgb(128, 0, 255);
   /* Change text color to white */
-  font-size: 36px;
+  font-size: 120px;
   /* Increase font size */
   text-align: center;
   /* Center the text */
@@ -180,12 +189,71 @@ body {
 }
 
 /* end of theme button */
+
 /* Light Mode Styles */
+
 body.light-mode {
-  background-color: white;
-  /* Light background */
-  color: black;
-  /* Light text color */
+  background-color: #FB9AAC;
+  /* Light pink background */
+  color: #008080;
+  /* Teal text color */
+}
+/* light Theme Styles */
+
+
+
+/* Additional styles for elements in light mode */
+body.light-mode .card {
+  background-color: #fff;
+  background-image: linear-gradient(163deg, #D4328F 0%, #3700ff 100%);
+  border-radius: 20px;
+  transition: all .3s;
+  /* Dark card background */
+  border: 2px solid #EC5D57;
+  /* Neon border */
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+  /* Glowing effect */
+  transition: all 0.3s;
+  /* Smooth transition */
+}
+
+body.light-mode .card2 h1 {
+  color: #FB928E;
+  /* Pink color for the title */
+}
+
+body.light-mode .card2 {
+  position: absolute;
+  /* Position card2 absolutely within card */
+  top: 0;
+  /* Align to the top of card */
+  left: 0;
+  /* Align to the left of card */
+  width: 100%;
+  /* Full width of card */
+  height: 100%;
+  /* Full height of card */
+  background-color: #ffd8cc;
+  border-radius: 20px;
+  /* Added border-radius */
+  transition: all .2s;
+  display: flex;
+  /* Use flexbox to center content */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  display: flex;
+  flex-direction: column;
+  /* Stack elements vertically */
+  justify-content: center;
+  align-items: center;
+  /* Center horizontally */
+  height: 100%;
+  /* Ensure it takes full height of the parent */
+  text-align: center;
+  /* Center text */
+  overflow: hidden;
 }
 
 /* Dark Mode Styles */
@@ -232,7 +300,21 @@ body.dark-mode {
   box-shadow: var(--btn-shadow);
   border-radius: 10px;
   border: 2px solid #2A2B3A;
+  /* theme */
+
 }
+
+/* added changes */
+
+.ui-btn:hover {
+  background-color: #00cc99;
+  /* Darker neon on hover */
+  transform: scale(1.05);
+  /* Slightly enlarge on hover */
+}
+
+/*      */
+
 
 .ui-btn span {
   letter-spacing: var(--btn-letter-spacing);
@@ -722,7 +804,7 @@ body.dark-mode {
   z-index: 10;
   top: calc(50% - 150px);
   left: calc(50% - 125px);
-  animation: astronaut 10s linear infinite;
+  animation: astronaut 5s linear infinite;
   transition: left 0.5s ease, top 0.5s ease;
   /* Smooth transition for position changes */
 
@@ -739,9 +821,27 @@ body.dark-mode {
   /* Center the text */
 }
 
-#Title h1 {
-  color: #ee00ff;
-  font-size: 20 px;
-  /* Change to your desired color */
+#kalvium img {
+  width: 10%;
+  height: auto;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 20;
 }
 
+
+/* Link Styles */
+a {
+  color: #00ffcc;
+  /* Neon link color */
+  text-decoration: none;
+  /* Remove underline */
+  transition: color 0.3s;
+  /* Smooth transition */
+}
+
+a:hover {
+  color: #00cc99;
+  /* Darker neon on hover */
+}
