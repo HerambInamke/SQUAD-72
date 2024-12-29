@@ -79,6 +79,7 @@ body {
   /* Increase font size */
   text-align: center;
   /* Center the text */
+  margin: 0;
 
 }
 
@@ -811,6 +812,7 @@ body.dark-mode {
 }
 
 #Title {
+  font-family: 'Montserrat', sans-serif;
   position: relative;
   /* Add this line */
   z-index: 20;
@@ -844,4 +846,13 @@ a {
 a:hover {
   color: #00cc99;
   /* Darker neon on hover */
+}
+
+#Title h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px; /* Adjust the size as needed */
+  color: rgb(128, 0, 255); /* Match the color with the main title */
+  margin: 0; /* Remove default margin */
+  margin-bottom: 10px;
+  z-index: 20;
 }
